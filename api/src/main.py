@@ -34,13 +34,10 @@ import packages.utils.get_path as path
 app = FastAPI()
 s3 = boto3.client('s3')
 sagemaker = boto3.client('sagemaker-runtime')
-'''endpoint_name = os.environ['ENDPOINT_NAME']
+endpoint_name = os.environ['ENDPOINT_NAME']
 bucket_load = os.environ['BUCKET_LOAD']
-bucket_output = os.environ['BUCKET_OUTPUT']'''
+bucket_output = os.environ['BUCKET_OUTPUT']
 
-endpoint_name = 'tensorflow-inference-2024-04-26-15-24-53-173'
-bucket_load = 'awss3-sagemakerawscdkparamosurveillancecolombiafbf-01u4pvxnztxz'
-bucket_output = 'awss3-inputoutputparamosurveillancecolombiaaee921c-eyd0xw21febn'
 
 def create_s3_path( *args):
     return '/'.join(args)
